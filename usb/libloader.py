@@ -163,6 +163,7 @@ def load_locate_library(candidates, cygwin_lib, name,
             raise NoLibraryCandidatesException(name)
     elif candidates:
         lib = locate_library(candidates, find_library)
+        print("Library found: %s" % lib)
         if lib:
             if sys.platform == 'win32':
                 loaded_lib = load_library(lib, name, win_cls)
